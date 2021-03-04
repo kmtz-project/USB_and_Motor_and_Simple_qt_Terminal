@@ -41,7 +41,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include <stdbool.h>
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -655,97 +654,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-/*
- 	 printf("\n\ri receive this: %d", str[0]);
-	 if (str[0] != 0)
-	 {
-
-		 printf("!= 0\n\r");
-		 if (str[0] == 128)
-		 {
-			 printf("\n\rEMS22 %d", read_from_EMS22());
-		 }
-		 else if ((str[0] > 1) && (str[0] < 128))
-		 {
-			 printf("\n\rdrive time: %d", str[0]);
-			 tempBit[0]  = str[0] & 0b01000000;
-			 tempBit[1]  = str[0] & 0b00100000;
-			 tempBit[2]  = str[0] & 0b00010000;
-			 tempBit[3]  = str[0] & 0b00001000;
-			 tempBit[4]  = str[0] & 0b00000100;
-			 tempBit[5]  = str[0] & 0b00000010;
-			 printf("\n\rN_ENABLE: %d", tempBit[0]);
-			 printf("\n\rMS1: %d", tempBit[1]);
-			 printf("\n\rMS2: %d", tempBit[2]);
-			 printf("\n\rMS3: %d", tempBit[3]);
-			 printf("\n\rSTEP: %d", tempBit[4]);
-			 printf("\n\rDIR: %d", tempBit[5]);
-
-
-			 bitHandler(tempBit[0], N_ENABLE);
-			 bitHandler(tempBit[1], MS1);
-			 bitHandler(tempBit[2], MS2);
-			 bitHandler(tempBit[3], MS3);
-			 bitHandler(tempBit[5], DIR);
-
-			 stepHandler(tempBit[4], 200, 500);
-
-		 }
-
-		 //0b 1000 0000 = 128 - encoder
-		 //0b 0xxx xxx0 = двигатель
-		 /*
-		 if (str[0] == '1')
-		 {
-			 printf("str[0] == 1\n\r");
-			 printf("\n\rN_ENABLE MS1 MS2 MS3 STEP DIR: ");
-			 //HAL_Delay(100);
-			 memset(str, 0, 10);
-			 //HAL_UART_Receive(&huart1, (uint8_t*)str, 6, 1000);
-			 str[0] = 1;
-			 str[1] = 0;
-			 str[2] = 1;
-			 str[3] = 0;
-			 str[4] = 1;
-			 printf("\n\ri receive this: %d%d%d%d%d", str[0],
-					 str[1],str[2],str[3],str[4],str[5]);
-			 bitHandler(str[0], N_ENABLE);
-			 bitHandler(str[1], MS1);
-			 bitHandler(str[2], MS2);
-			 bitHandler(str[3], MS3);
-			 bitHandler(str[5], DIR);
-
-
-
-			 stepHandler(str[4], 200, 500);
-
-			 HAL_Delay(1000);
-
-			 str[0] = 0;str[1] = 0;str[2] = 1;str[3] = 0;str[4] = 1;
-			 printf("\n\ri receive this: %d%d%d%d%d", str[0],
-			 str[1],str[2],str[3],str[4],str[5]);
-			 bitHandler(str[0], N_ENABLE);
-			 bitHandler(str[1], MS1);
-			 bitHandler(str[2], MS2);
-			 bitHandler(str[3], MS3);
-			 bitHandler(str[5], DIR);
-			 stepHandler(str[4], 200, 500);
-			 HAL_Delay(1000);
-		 }
-		 else if (str[0] == '2')
-		 {
-			 printf("str[0] == 2\n\r");
-			 pos_temp = read_from_EMS22();
-			 if (pos_temp > 0)
-				 printf("\n\rEMS22 more 0:%d", pos_temp);
-			 else
-				 printf("\n\rEMS22 = 0");
-			 pos_temp = 0;
-		 }
-
-	 }
-
-	 memset(str, 0, 10);
-	 //HAL_Delay(1000);
-	 //iter++;
- */
